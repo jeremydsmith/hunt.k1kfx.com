@@ -42,6 +42,20 @@
     .frame { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; background: var(--card); }
     .frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
+    ol.steps { list-style: none; counter-reset: step; display: grid; gap: 0; border-top: 1px solid var(--line); }
+    ol.steps li {
+      counter-increment: step;
+      display: grid; grid-template-columns: 56px 1fr; gap: 4px 16px;
+      padding: 24px 0; border-bottom: 1px solid var(--line);
+    }
+    @media (min-width: 860px) { ol.steps li { grid-template-columns: 80px 260px 1fr; align-items: baseline; } }
+    ol.steps li::before { content: "0" counter(step); font-family: var(--font-mono); font-size: 13px; color: var(--accent-text); grid-row: span 2; }
+    @media (min-width: 860px) { ol.steps li::before { grid-row: auto; } }
+    ol.steps b { font-family: var(--font-display); font-weight: normal; font-size: 20px; letter-spacing: -0.01em; }
+    ol.steps span { color: var(--muted); }
+
+    .more { margin-top: 40px; color: var(--muted); }
+
     .closer { margin-top: 64px; }
     .terms + .videos { margin-top: 56px; }
   </style>
@@ -56,7 +70,7 @@
         <h1 class="k-display">Find<br><span class="k-serif">the fox.</span></h1>
       </div>
       <div>
-        <p>Someone hides a small transmitter, the “fox,” and everyone else tracks it down using radio direction finding. Handheld antennas, a map full of bearing lines, and a lot of running around.</p>
+        <p>I hide a small transmitter, the “fox,” somewhere in a park, and the kids in our radio club track it down with handheld antennas. It's hide-and-seek with radios, and there's a lot of running around.</p>
         <div class="btns">
           <a class="k-btn k-btn-primary" href="foxpursuit/dashboard.html">Start Hunting →</a>
           <a class="k-btn k-btn-secondary" href="#new">New to fox hunting?</a>
@@ -65,34 +79,47 @@
     </section>
 
     <figure class="shot">
-      <div class="k-photo"><img src="img/fox-tape-yagi.jpg" width="844" height="435" alt="A ham helps a newcomer hold a tape-measure Yagi antenna with a radio attached, at an outdoor ARRL booth"></div>
+      <div class="k-photo"><img src="img/fox-tape-yagi.jpg" width="844" height="435" alt="A ham helps a newcomer hold a tape-measure Yagi antenna with a radio attached"></div>
       <figcaption>Learning to take a bearing with a tape-measure Yagi, the classic homebrew fox hunting antenna.</figcaption>
     </figure>
 
     <section class="k-section" id="new" aria-labelledby="new-h">
       <div class="head two">
         <div>
-          <div class="k-tag kicker"><span class="dot"></span>Beginners</div>
+          <div class="k-tag kicker"><span class="dot"></span>What it is</div>
           <h2 id="new-h">New to fox hunting?</h2>
         </div>
-        <p>No experience needed. If you can play hot-and-cold, you can fox hunt.</p>
+        <p>No experience needed. If you can play hot-and-cold, you can fox hunt. Here are three words you'll hear us use.</p>
       </div>
 
-      <h3 class="sub">How it works</h3>
       <div class="terms">
         <div class="k-card">
           <h3>Fox</h3>
-          <p>A small hidden transmitter that sends a signal every so often. There can be more than one.</p>
+          <p>A small hidden transmitter that beeps every so often. Sometimes I hide more than one.</p>
         </div>
         <div class="k-card">
-          <h3>Follow the strongest signal</h3>
-          <p>Turn slowly with the antenna. Where the signal sounds loudest, that's the way to go.</p>
+          <h3>Bearing</h3>
+          <p>The direction the signal is coming from. Point where it's loudest and that's your bearing.</p>
         </div>
         <div class="k-card">
-          <h3>Check again, and again</h3>
-          <p>Walk a bit, then measure again. Every new reading gets you closer, until you spot the fox.</p>
+          <h3>Moxon or Yagi</h3>
+          <p>A directional antenna that hears better in one direction than another.</p>
         </div>
       </div>
+    </section>
+
+    <section class="k-section" aria-labelledby="day">
+      <div class="head">
+        <div class="k-tag kicker"><span class="dot"></span>How it goes</div>
+        <h2 id="day">A hunt, start to finish</h2>
+      </div>
+      <ol class="steps">
+        <li><b>Hide the fox</b><span>I tuck the transmitter somewhere in the park before anyone arrives.</span></li>
+        <li><b>Listen</b><span>Everyone tunes in and waits for the fox to beep.</span></li>
+        <li><b>Turn and point</b><span>Turn slowly with the antenna. Where the signal sounds loudest, that's the way to go.</span></li>
+        <li><b>Walk and check again</b><span>Walk a bit, then listen again. Every new reading gets you closer.</span></li>
+        <li><b>Spot the fox</b><span>Someone finds it, usually at a run. Then one of the kids gets to hide it.</span></li>
+      </ol>
 
       <h3 class="sub">See it in action</h3>
       <div class="videos">
@@ -107,15 +134,16 @@
           <p>A young beginner takes on the experienced hunters. KM4ACK.</p>
         </div>
       </div>
+      <p class="more">Want to know more? ARRL's <a href="https://www.arrl.org/amateur-radio-direction-finding">Amateur Radio Direction Finding</a> page covers the on-foot sport, also called radio orienteering.</p>
     </section>
 
     <section class="k-section" id="app" aria-labelledby="app-h">
       <div class="head two">
         <div>
-          <div class="k-tag kicker"><span class="dot"></span>Smartphone + Fox Pursuit</div>
+          <div class="k-tag kicker"><span class="dot"></span>Tools</div>
           <h2 id="app-h">Hunting with an app</h2>
         </div>
-        <p>To help with triangulation, Fox Pursuit turns your phone into the compass, the notebook and the map at once.</p>
+        <p>Take bearings from two or three spots and the lines cross near the fox. That's triangulation. On hunt night we use Fox Pursuit, which turns a phone into the compass, the notebook and the map at once.</p>
       </div>
 
       <div class="terms">
@@ -142,7 +170,7 @@
         <div>
           <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/puCFdVMl8XE?start=3" title="Fox Pursuit iPhone setup" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
           <h3>iPhone setup</h3>
-          <p>iPhone only. Skip activation.</p>
+          <p>For iPhones: a one-time setup. You can skip the activation step.</p>
         </div>
       </div>
 
