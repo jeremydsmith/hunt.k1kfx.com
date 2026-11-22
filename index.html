@@ -34,19 +34,7 @@
     .terms .k-card { padding: 28px; }
     .terms h3 { font-size: 22px; }
     .terms p { color: var(--muted); font-size: 15px; }
-    code { font-family: var(--font-mono); font-size: 0.9em; background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; color: var(--ink); }
 
-    ol.steps { list-style: none; counter-reset: step; display: grid; border-top: 1px solid var(--line); }
-    ol.steps li {
-      counter-increment: step;
-      display: grid; grid-template-columns: 56px 1fr; gap: 4px 16px;
-      padding: 24px 0; border-bottom: 1px solid var(--line);
-    }
-    @media (min-width: 860px) { ol.steps li { grid-template-columns: 80px 260px 1fr; align-items: baseline; } }
-    ol.steps li::before { content: "0" counter(step); font-family: var(--font-mono); font-size: 13px; color: var(--accent-text); grid-row: span 2; }
-    @media (min-width: 860px) { ol.steps li::before { grid-row: auto; } }
-    ol.steps b { font-family: var(--font-display); font-weight: normal; font-size: 20px; letter-spacing: -0.01em; }
-    ol.steps span { color: var(--muted); }
 
     .videos { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
     .videos h3 { font-family: var(--font-body); font-weight: 600; font-size: 17px; letter-spacing: 0; margin: 12px 0 2px; }
@@ -55,6 +43,7 @@
     .frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
     .closer { margin-top: 64px; }
+    p.lead { max-width: 62ch; margin: -8px 0 24px; }
   </style>
 </head>
 <body>
@@ -121,37 +110,35 @@
     </section>
 
     <section class="k-section" id="app" aria-labelledby="app-h">
-      <div class="head">
-        <div class="k-tag kicker"><span class="dot"></span>Hunt night</div>
-        <h2 id="app-h">Using the Fox Pursuit app</h2>
+      <div class="head two">
+        <div>
+          <div class="k-tag kicker"><span class="dot"></span>Smartphone + Fox Pursuit</div>
+          <h2 id="app-h">Hunting with an app</h2>
+        </div>
+        <p>Triangulation is hardest early in a hunt, when you have one bearing and a big map. Fox Pursuit turns your phone into the compass, the notebook and the map at once, so your bearing lines start crossing sooner.</p>
       </div>
 
-      <h3 class="sub">How to hunt</h3>
-      <ol class="steps">
-        <li><b>Kickoff</b><span>Fox frequencies are revealed on K0KKV at the starting time.</span></li>
-        <li><b>Start a hunt</b><span>Start Hunting, sign in, then Create Hunt. Name it callsign + fox number, like <code>K1KFX-1</code>.</span></li>
-        <li><b>Turn on tracking</b><span>GPS and compass on. Move the phone in a figure-8 to calibrate the compass.</span></li>
-        <li><b>Take bearings</b><span>Point at the signal and tap Submit. Radio your location and bearing to net control. Eight or fewer good bearings work best.</span></li>
-        <li><b>Find it</b><span>Found the fox? Close the hunt and start a new one for the next fox.</span></li>
-      </ol>
-
-      <h3 class="sub">Tips</h3>
       <div class="terms">
         <div class="k-card">
-          <h3>Offline map</h3>
-          <p>Download the map on Wi-Fi before you leave, so it works anywhere.</p>
+          <h3>GPS pins your spot</h3>
+          <p>Every bearing is saved exactly where you stood. No guessing your position on a paper map.</p>
         </div>
         <div class="k-card">
-          <h3>Buddy up</h3>
-          <p>One hunt, you both join it, one shared map.</p>
+          <h3>Compass reads the bearing</h3>
+          <p>Hold the phone along the antenna, point at the strongest signal and tap. The line is drawn for you. A quick figure-8 calibrates the compass.</p>
         </div>
         <div class="k-card">
-          <h3>iPhone</h3>
-          <p>Watch the iPhone setup video below once before your first hunt. Skip activation.</p>
+          <h3>Offline maps</h3>
+          <p>Download your area on Wi-Fi before you go, and the map keeps working where cell coverage doesn't.</p>
+        </div>
+        <div class="k-card">
+          <h3>Work as a team</h3>
+          <p>Join the same hunt and everyone's bearings land on one shared map. More angles, faster fix.</p>
         </div>
       </div>
 
-      <h3 class="sub">Videos</h3>
+      <h3 class="sub">Get oriented</h3>
+      <p class="k-muted lead">New to the app? Watch these once before your first hunt: a quick tour of the screens, and the iPhone setup.</p>
       <div class="videos">
         <div>
           <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/AtWXc-IGKhY" title="Fox Pursuit overview" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
